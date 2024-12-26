@@ -152,6 +152,18 @@ public class GameScreen extends JPanel implements ActionListener, KeyListener {
 
         if (ammo <= 0) {
             enemy = null;
+             try {
+
+                GameOverAudio = AudioSystem.getAudioInputStream(GaneOver);
+
+                clp = AudioSystem.getClip();
+                clp.open(GameOverAudio);
+
+                clp.start();
+
+            } catch (Exception exception) {
+
+            }
             BG = new ImageIcon("3912192_2066996.jpg")
                     .getImage().getScaledInstance(500, 500,
                             Image.SCALE_AREA_AVERAGING);
